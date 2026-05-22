@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kings-Bilbil/pwl-routing-manual.git"
@@ -19,11 +16,12 @@
   },
   "homepage": "https://github.com/Kings-Bilbil/pwl-routing-manual#readme",
   "devDependencies": {
-    "@types/node": "^25.3.3",
+    "@types/node": "^20.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
   "scripts": {
-  "start": "ts-node src/server.ts"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/server.ts"
   }
 }
