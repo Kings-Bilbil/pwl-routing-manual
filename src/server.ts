@@ -1,4 +1,5 @@
 import * as http from 'http';
+
 const PORT = 3000;
 const users = [
   { id: 1, name: "Nabil" },
@@ -10,13 +11,13 @@ const products = [
   { id: 2, name: "Case" }
 ];
 
-const server = http.createServer((req, res) => {
+const server = http.createServer((req: http.IncomingMessage, res: http.ServerResponse) => {
   const startTime = Date.now(); // mulai hitung waktu
   const url = req.url || '/';
   const method = req.method || 'GET';
   console.log(`[${new Date().toLocaleTimeString()}] ${method} ${url}`);
 
-  const sendJSON = (statusCode, data) => {
+  const sendJSON = (statusCode: number, data: any) => {
     res.writeHead(statusCode, { "Content-Type": "application/json" });
     res.end(JSON.stringify(data));
       
@@ -42,7 +43,7 @@ const server = http.createServer((req, res) => {
 
   if (url.startsWith("/users/") && method === "GET") {
     const parts = url.split("/");
-    const id = parseInt(parts[2]);
+    const id = parseInt(parts[2], 10);
 
     const user = users.find(u => u.id === id);
 
